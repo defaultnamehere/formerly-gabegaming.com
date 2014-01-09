@@ -3,6 +3,18 @@
 
 $(function() {
 
+
+    var raiseGabe = function() {
+        var gag = $('div.not-loaded');
+        gag.removeClass('not-loaded');
+        gag.addClass('gag');
+
+    };
+
+    $('div.not-loaded').load(function () {
+        raiseGabe();
+    });
+
     /*
 
     var hackCSS = $('#hackity-hack');

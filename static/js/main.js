@@ -3,6 +3,9 @@
 
 $(function() {
 
+    var pageWidth = $('body').width();
+    var MAX_SALES = (pageWidth/70)*5;
+
     $('div.gag > img').load(function () {
         console.log("image loddasdasd");
         $(this).parent().addClass('gag-animation');
@@ -18,19 +21,18 @@ $(function() {
 
     var $saleBox = $('.sale-box');
     var interval = 200;
+    var numSales = 0;
     var addSale = function() {
-        var pageWidth = $('body').width();
         var xPos = getRandomInt(0, pageWidth);
         var percentOff =  randomChoice(steamSales);
         var newSale = $saleBox.clone().show();
         newSale.text("-" + percentOff + "%"); // >js
         newSale.css("left", xPos);
         $('body').append(newSale);
-        window.setTimeout(addSale, interval);
-
-        window.setTimeout(function() {
-            newSale.remove();
-        }, 2000);
+        if (numSales < MAX_SALES) {
+            window.setTimeout(addSale, interval);
+            numSales++;
+        }
 
     };
 

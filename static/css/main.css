@@ -5,7 +5,7 @@ body {
 }
 iframe {
     position: absolute;
-    border:0
+    border:0;
     top: 0px;
     left: 0px;
     height: 100%;
@@ -13,7 +13,7 @@ iframe {
 
 }
 
-div#gag {
+div.gag-animation{
     position: absolute;
     top: 0px;
     left: 0px;

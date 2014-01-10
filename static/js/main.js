@@ -3,31 +3,10 @@
 
 $(function() {
 
-
-    var raiseGabe = function() {
-        var gag = $('div.not-loaded');
-        gag.removeClass('not-loaded');
-        gag.addClass('gag');
-
-    };
-
-    $('div.not-loaded').load(function () {
-        raiseGabe();
+    $('div.gag > img').load(function () {
+        console.log("image loddasdasd");
+        $(this).parent().addClass('gag-animation');
     });
-
-    /*
-
-    var hackCSS = $('#hackity-hack');
-
-    var height = $(this).height();
-
-    //Use our own ridiculous string substitution language, ban ourselves from r/programming
-    var hackHTML = hackCSS.html();
-    hackHTML = hackHTML.replace("%70", height*0.7);
-    hackHTML = hackHTML.replace("%80", height*0.8);
-    hackHTML = hackHTML.replace("%100", height);
-    hackCSS.html(hackHTML);
-    */
 
     var steamSales = [10, 25, 33, 50, 66, 75, 80, 90]
 
@@ -70,6 +49,7 @@ $(function() {
 
     var $steamFrame = $('iframe.steam')
     $steamFrame.load(function() {
+        console.log("steam frame loadasasda");
         var height = $steamFrame.contents().height();
         var width = $steamFrame.contents().width();
         $steamFrame.height(height);

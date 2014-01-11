@@ -7,7 +7,6 @@ $(function() {
     var MAX_SALES = (pageWidth/70)*5;
 
     $('div.gag > img').load(function () {
-        console.log("image loddasdasd");
         $(this).parent().show();
         $(this).parent().addClass('gag-animation');
     });
@@ -52,7 +51,6 @@ $(function() {
 
     var $steamFrame = $('iframe.steam')
     $steamFrame.load(function() {
-        console.log("steam frame loadasasda");
         var height = $steamFrame.contents().height();
         var width = $steamFrame.contents().width();
         $steamFrame.height(height);

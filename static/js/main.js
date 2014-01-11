@@ -1,5 +1,5 @@
 
-//TODO (thanks peter ward) : 20% opacity sunshine thing behind gabe.
+//TODO (maybe) (thanks peter ward) : 20% opacity sunshine thing behind gabe.
 
 $(function() {
 
@@ -8,6 +8,7 @@ $(function() {
 
     $('div.gag > img').load(function () {
         console.log("image loddasdasd");
+        $(this).parent().show();
         $(this).parent().addClass('gag-animation');
     });
 

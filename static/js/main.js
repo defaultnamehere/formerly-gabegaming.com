@@ -27,6 +27,7 @@ $(function() {
     };
 
     var startGabe = function () {
+        console.log("ARE YOU READY FOR A MIRACLE?");
 
         var $saleBox = $('.sale-box');
         // How long in ms to wait until adding another sale box.
@@ -72,6 +73,7 @@ $(function() {
     var $steamFrame = $('iframe.steam')
     $steamFrame.load(function() {
         if (!steamLoaded) {
+            steamLoaded = true; //programming
             // Resize the iframe to fullscreen at runtime in js oops someone fire me
             var height = $steamFrame.contents().height();
             var width = $steamFrame.contents().width();

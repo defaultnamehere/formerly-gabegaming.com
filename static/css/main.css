@@ -41,20 +41,15 @@ div.sale-box {
 
     pointer-events: none;
     color: #ffffff;
-    -webkit-transition-timing-function: ease-out;
     -webkit-animation-name: sale;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-duration: 2s;
 
-    -moz-transition-timing-function: ease-out;
     -moz-animation-name: sale;
     -moz-animation-iteration-count: infinite;
     -moz-animation-duration: 2s;
     -moz-animation-name: sale;
 
-    -webkit-transition-timing-function: ease-out;
-    -moz-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
     animation-name: sale;
 }
 

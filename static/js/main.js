@@ -21,24 +21,19 @@ $(function() {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
 
-    var startGabe = function () {
+
+
+    var startRain = function () {
         console.log("ARE YOU READY FOR A MIRACLE? (starting rain)");
 
         // When the image of his holiness loads, show it and animate it.
-        $('div.gag > img').load(function () {
-            $(this).parent().show();
-            $(this).parent().addClass('gag-animation');
-        });
-
         var $saleBox = $('.sale-box');
         // How long in ms to wait until adding another sale box.
         var interval = 200;
         var numSales = 0;
 
-        console.log("about to add sale")
         // Adds a sale box at a random x position.
         var addSale = function() {
-            console.log("adding sale")
 
             var xPos = getRandomInt(0, pageWidth);
             var percentOff = randomChoice(STEAM_SALES);
@@ -56,41 +51,43 @@ $(function() {
                 window.setTimeout(addSale, interval);
                 numSales++;
             }
-            console.log("finished adding sale")
+
+        };
+
+        window.setInterval(function() {
+            interval = Math.max(10, interval - 10);
+        }, 500);
+
+        window.setTimeout(addSale, 2*1000);
 
     };
+
+    var startGabe = function() {
+        $('div.gag').show();
+        $('div.gag').addClass('gag-animation');
+    }
 
     //TODO: system requirements for these legit CSS animations
 
     // Set an interval to decrease the interval #inception
-    window.setInterval(function() {
-        interval = Math.max(10, interval - 10);
-    }, 500);
-
-    window.setTimeout(addSale, 2*1000);
-
-    };
 
     // Only care about the first time we load the steam iframe, or else we keep adding sales
     // every time we navigate to a new steam link.
     var steamLoaded = false;
+
     var $steamFrame = $('iframe.steam')
     $steamFrame.load(function() {
+        console.log("steam loaded!");
         if (!steamLoaded) {
-            console.log("Getting ready to start gabe...");
             steamLoaded = true; //programming
-
-            // Resize the iframe to fullscreen at runtime in js oops someone fire me
-            //var height = $steamFrame.contents().height();
-            //var width = $steamFrame.contents().width();
-            //$steamFrame.height(height);
-            //$steamFrame.width(width);
-
-            startGabe(); //programming
+            $('div.gag > img').load(function () {
+                console.log("gabe loaded!");
+                startGabe();
+                startRain();
+            });
         }
 
     });
-
 
 });
 

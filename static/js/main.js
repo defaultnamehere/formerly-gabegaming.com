@@ -8,6 +8,12 @@ $(function() {
     // How many falling boxes we'll have at maximum gabeIntensity.
     var MAX_SALES = (pageWidth/70)*5;
 
+    // We poll these variables while the wallet is being prepared
+    var gabeReady = false;
+    // also only care about the first time we load the steam iframe, or else we keep adding sales
+    // every time we navigate to a new steam link.
+    var iframeReady = false;
+    var audioReady = false;
 
     // The carefully, lovingly determined percentages which his holiness removes from the prices of his products.
     var STEAM_SALES = [10, 25, 33, 50, 66, 75, 80, 90]
@@ -20,8 +26,6 @@ $(function() {
     var getRandomInt = function(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
-
-
 
     var startRain = function () {
         console.log("ARE YOU READY FOR A MIRACLE? (starting rain)");
@@ -70,36 +74,55 @@ $(function() {
 
 
     var praiseBeToGaben = function () {
+        $('div.prepare-gag').hide();
         startGabe();
         startRain();
+        $audio.trigger('play');
     }
 
     //TODO: system requirements for these legit CSS animations
-
-
-    // Only care about the first time we load the steam iframe, or else we keep adding sales
-    // every time we navigate to a new steam link.
-    var steamLoaded = false;
-
     var $steamFrame = $('iframe.steam')
 
     $steamFrame.load(function() {
         console.log("steam loaded!");
-        if (steamLoaded) {
+        if (iframeReady) {
             return
         }
-        steamLoaded = true; //programming
-        $gabe = $('div.gag > img');
-        //Even if we loaded from cache, praise be. Nothing can cache his holiness forever.
-        if ($gabe[0].complete) {
-            praiseBeToGaben()
-        }
-        else {
-            $gabe.load(function () {
-                praiseBeToGaben()
-            });
-        }
+        iframeReady = true; //programming
     });
+
+    $gabe = $('div.gag > img');
+    //Even if we loaded from cache, praise be. Nothing can cache his holiness forever.
+    if ($gabe[0].complete) {
+        gabeReady = true;
+    }
+    else {
+        $gabe.load(function () {
+            gabeReady = true;
+        });
+    }
+
+    $audio = $('audio');
+    $audio.on('loadedmetadata', function() {
+        audioReady = true;
+    });
+    $audio.on('ended', function() {
+        this.currentTime = 0;
+        this.play();
+    });
+
+    var prepareWallet = function() {
+        // sick JS cast hack!! bool goes to ints like for real
+        var completed = gabeReady + iframeReady + audioReady;
+        $('.prepare-loader').css('max-height', $('.prepare-loader > img').height() / 3 * completed + 'px');
+        if (gabeReady && iframeReady && audioReady) {
+            window.setTimeout(praiseBeToGaben, 1000);
+        } else {
+            window.setTimeout(prepareWallet, 100);
+        }
+    }
+
+    prepareWallet();
 });
 
 

@@ -81,10 +81,10 @@ $(function() {
             steamLoaded = true; //programming
 
             // Resize the iframe to fullscreen at runtime in js oops someone fire me
-            var height = $steamFrame.contents().height();
-            var width = $steamFrame.contents().width();
-            $steamFrame.height(height);
-            $steamFrame.width(width);
+            //var height = $steamFrame.contents().height();
+            //var width = $steamFrame.contents().width();
+            //$steamFrame.height(height);
+            //$steamFrame.width(width);
 
             startGabe(); //programming
         }

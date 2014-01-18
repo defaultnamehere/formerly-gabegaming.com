@@ -54,6 +54,7 @@ $(function() {
 
         };
 
+        // Set an interval to decrease the interval #inception
         window.setInterval(function() {
             interval = Math.max(10, interval - 10);
         }, 500);
@@ -67,28 +68,38 @@ $(function() {
         $('div.gag').addClass('gag-animation');
     }
 
+
+    var praiseBeToGaben = function () {
+        startGabe();
+        startRain();
+    }
+
     //TODO: system requirements for these legit CSS animations
 
-    // Set an interval to decrease the interval #inception
 
     // Only care about the first time we load the steam iframe, or else we keep adding sales
     // every time we navigate to a new steam link.
     var steamLoaded = false;
 
     var $steamFrame = $('iframe.steam')
+
     $steamFrame.load(function() {
         console.log("steam loaded!");
-        if (!steamLoaded) {
-            steamLoaded = true; //programming
-            $('div.gag > img').load(function () {
-                console.log("gabe loaded!");
-                startGabe();
-                startRain();
+        if (steamLoaded) {
+            return
+        }
+        steamLoaded = true; //programming
+        $gabe = $('div.gag > img');
+        //Even if we loaded from cache, praise be. Nothing can cache his holiness forever.
+        if ($gabe[0].complete) {
+            praiseBeToGaben()
+        }
+        else {
+            $gabe.load(function () {
+                praiseBeToGaben()
             });
         }
-
     });
-
 });
 
 

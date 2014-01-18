@@ -1,4 +1,3 @@
-
 //TODO (maybe) (thanks peter ward) : 20% opacity sunshine thing behind gabe.
 //TODO each click loads more images
 
@@ -112,10 +111,8 @@ $(function() {
     });
 
     var prepareWallet = function() {
-        // sick JS cast hack!! bool goes to ints like for real
-        var completed = gabeReady + iframeReady + audioReady;
-        $('.prepare-loader').css('max-height', $('.prepare-loader > img').height() / 3 * completed + 'px');
         if (gabeReady && iframeReady && audioReady) {
+            $('.prepare-loader').css('max-height', $('.prepare-loader > img').height() / 3 + 'px');
             window.setTimeout(praiseBeToGaben, 1000);
         } else {
             window.setTimeout(prepareWallet, 100);

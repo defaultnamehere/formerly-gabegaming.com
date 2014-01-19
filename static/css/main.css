@@ -17,7 +17,7 @@ div.gag-animation{
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 999;
+    z-index: 10;
     pointer-events: none;
     -webkit-animation-duration: 10s;
     -webkit-animation-name: moveIn;

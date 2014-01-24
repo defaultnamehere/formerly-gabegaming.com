@@ -1,6 +1,5 @@
 
 //TODO (maybe) (thanks peter ward) : 20% opacity sunshine thing behind gabe.
-//TODO each click loads more images
 
 $(function() {
 
@@ -13,7 +12,7 @@ $(function() {
     var STEAM_SALES = [10, 25, 33, 50, 66, 75, 80, 90]
 
     // lolsorandom
-    var randomChoice = function(list) {
+var randomChoice = function(list) {
             return list[Math.floor(Math.random()*list.length)]
     }
 
@@ -21,10 +20,7 @@ $(function() {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     };
 
-
-
     var startRain = function () {
-        console.log("ARE YOU READY FOR A MIRACLE? (starting rain)");
 
         // When the image of his holiness loads, show it and animate it.
         var $saleBox = $('.sale-box');
@@ -84,7 +80,6 @@ $(function() {
     var $steamFrame = $('iframe.steam')
 
     $steamFrame.load(function() {
-        console.log("steam loaded!");
         if (steamLoaded) {
             return
         }

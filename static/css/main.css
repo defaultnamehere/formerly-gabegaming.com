@@ -3,6 +3,7 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
 }
+
 iframe {
     position: absolute;
     border:0;
@@ -10,14 +11,13 @@ iframe {
     left: 0px;
     height: 100%;
     width: 100%;
-
 }
 
 div.gag-animation{
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 999;
+    z-index: 10;
     pointer-events: none;
     -webkit-animation-duration: 10s;
     -webkit-animation-name: moveIn;
@@ -114,3 +114,46 @@ div.sale-box {
         top: 100%;
     }
 } 
+
+.prepare-gag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: table;
+}
+
+.prepare-gag > * {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.prepare-gag h1 {
+    color: #FFF;
+    text-align: center;
+    font-family: "League Gothic";
+    font-weight: normal;
+    font-size: 6em;
+    padding-bottom: 1em;
+    margin: 0;
+}
+
+.prepare-loader {
+    display: inline-block;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.8s;
+    -moz-transition: max-height 0.8s;
+    transition: max-height 0.8s;
+}
+
+.prepare-loader > img {
+    max-width: 463px;
+    max-height: 463px;
+    height: 30%;
+}

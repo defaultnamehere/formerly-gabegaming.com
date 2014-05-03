@@ -1,0 +1,31 @@
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
+
+.social-header {
+    position: absolute;
+    bottom: 20px;
+    right: 35px;
+    z-index: 999;
+}
+
+.fa.fa-github {
+    font-size: 2.3em;
+    color: #888;
+    margin-top: -0.04em;
+}
+
+.fa.fa-github:hover {
+    color: #AAA;
+}
+
+.icon.icon-gh {
+    background-color: inherit;
+}
+
+.icon {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    background-color: #888;
+    border-radius: 5px;
+    overflow: hidden;
+}

@@ -3,10 +3,6 @@
 
 $(function() {
 
-    var pageWidth = $('body').width();
-    // How many falling boxes we'll have at maximum gabeIntensity.
-    var MAX_SALES = (pageWidth/70)*5;
-
     // We poll these variables while the wallet is being prepared
     var gabeReady = false;
     // also only care about the first time we load the steam iframe, or else we keep adding sales
@@ -37,7 +33,10 @@ $(function() {
 
         // Adds a sale box at a random x position.
         var addSale = function() {
-
+            // Get the width every time we add a sale to account for dynamic widths.
+            // Thanks ocbaker on github for finding this bug.
+            var pageWidth = $('body').width();
+            var maxSales = (pageWidth/70)*5
             var xPos = getRandomInt(0, pageWidth);
             var percentOff = randomChoice(STEAM_SALES);
             // Just copy the hidden box we had at page load time to make a new box.
@@ -48,8 +47,8 @@ $(function() {
             newSale.css("left", xPos);
             $('body').append(newSale);
 
-            //Only have MAX_SALES sale boxes onscreen at once.
-            if (numSales < MAX_SALES) {
+            //Only have maxSales sale boxes onscreen at once.
+            if (numSales < maxSales) {
                 // Add a new sale box later.
                 window.setTimeout(addSale, interval);
                 numSales++;

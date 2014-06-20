@@ -124,6 +124,14 @@ $(function() {
     }
 
     prepareWallet();
+
+    var browseSteam = function () {
+        $('div.gag').animate({
+            top: "200%"
+        }, 20000)
+        $('.sunburst').fadeOut(10000);
+    }
+
 });
 
 

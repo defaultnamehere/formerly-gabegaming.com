@@ -159,7 +159,7 @@ div.sale-box {
 }
 
 .sunburst {
-    position: fixed;
+    position: absolute;
     z-index: -1;
     bottom:-10%;
     right: -60%;

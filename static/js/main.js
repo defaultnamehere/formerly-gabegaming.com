@@ -23,7 +23,7 @@ $(function() {
     };
 
     var startRain = function () {
-        console.log("ARE YOU READY FOR A MIRACLE? (starting rain)");
+        console.log("ARE YOU READY FOR A MIRACLE?");
 
         // When the image of his holiness loads, show it and animate it.
         var $saleBox = $('.sale-box');
@@ -76,13 +76,18 @@ $(function() {
         startGabe();
         startRain();
         $audio.trigger('play');
+        window.setTimeout(
+                function() {
+                    $('div.sunburst').fadeIn(4000);
+                }
+                , 8000)
     }
+
 
     //TODO: system requirements for these legit CSS animations
     var $steamFrame = $('iframe.steam')
 
     $steamFrame.load(function() {
-        console.log("steam loaded!");
         if (iframeReady) {
             return
         }

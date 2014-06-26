@@ -23,6 +23,7 @@ div.gag-animation{
     -webkit-animation-name: moveIn;
     -moz-animation-duration: 10s;
     -moz-animation-name: moveIn;
+    animation-duration: 10s;
     animation-name: moveIn;
 }
 
@@ -51,6 +52,8 @@ div.sale-box {
     -moz-animation-name: sale;
 
     animation-name: sale;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
 }
 
 @-webkit-keyframes moveIn {
@@ -178,6 +181,10 @@ div.sale-box {
    -moz-animation-duration:2s;
    -moz-animation-iteration-count:infinite;
    -moz-animation-timing-function:linear;
+   animation-name: rotate1;
+   animation-duration:2s;
+   animation-iteration-count:infinite;
+   animation-timing-function:linear;
 }
 
 .sunburst b {
@@ -193,46 +200,64 @@ div.sale-box {
 .sunburst b:nth-child(1) { 
    -webkit-transform:rotate(20deg);  
    -moz-transform:rotate(20deg);  
+   -ms-transform:rotate(20deg);
+   transform:rotate(20deg);
 }
 
 .sunburst b:nth-child(2) { 
    -webkit-transform:rotate(40deg);  
    -moz-transform:rotate(40deg);  
+   -ms-transform:rotate(40deg);
+   transform:rotate(40deg);
 }
 
 .sunburst b:nth-child(3) { 
    -webkit-transform:rotate(60deg);  
    -moz-transform:rotate(60deg);  
+   -ms-transform:rotate(60deg);
+   transform:rotate(60deg);
 }
 
 .sunburst b:nth-child(4) { 
    -webkit-transform:rotate(80deg);  
    -moz-transform:rotate(80deg);  
+   -ms-transform:rotate(80deg);
+   transform:rotate(80deg);
 }
 
 .sunburst b:nth-child(5) { 
    -webkit-transform:rotate(100deg); 
    -moz-transform:rotate(100deg); 
+   -ms-transform:rotate(100deg);
+   transform:rotate(100deg);
 }
 
 .sunburst b:nth-child(6) {    
    -webkit-transform:rotate(120deg); 
    -moz-transform:rotate(120deg); 
+   -ms-transform:rotate(120deg);
+   transform:rotate(120deg);
 }
 
 .sunburst b:nth-child(7) { 
    -webkit-transform:rotate(140deg); 
    -moz-transform:rotate(140deg); 
+   -ms-transform:rotate(140deg);
+   transform:rotate(140deg);
 }
 
 .sunburst b:nth-child(8) { 
    -webkit-transform:rotate(160deg); 
    -moz-transform:rotate(160deg); 
+   -ms-transform:rotate(160deg);
+   transform:rotate(160deg);
 }
 
 .sunburst b:nth-child(9) { 
    -webkit-transform:rotate(180deg); 
    -moz-transform:rotate(180deg); 
+   -ms-transform:rotate(180deg);
+   transform:rotate(180deg);
 }
 
 @-webkit-keyframes rotate1 {
@@ -243,4 +268,14 @@ div.sale-box {
 @-moz-keyframes rotate1 {
     from { -moz-transform: rotate(0deg); }
     to   { -moz-transform: rotate(20deg); }
+}
+
+@-ms-keyframes rotate1 {
+    from { -ms-transform: rotate(0deg); }
+    to   { -ms-transform: rotate(20deg); }
+}
+
+@keyframes rotate1 {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(20deg); }
 }

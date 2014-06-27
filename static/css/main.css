@@ -23,6 +23,8 @@ div.gag-animation{
     -webkit-animation-name: moveIn;
     -moz-animation-duration: 10s;
     -moz-animation-name: moveIn;
+    -o-animation-duration: 10s;
+    -o-animation-name: moveIn;
     animation-duration: 10s;
     animation-name: moveIn;
 }
@@ -45,12 +47,12 @@ div.sale-box {
     -webkit-animation-name: sale;
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-duration: 2s;
-
     -moz-animation-name: sale;
     -moz-animation-iteration-count: infinite;
     -moz-animation-duration: 2s;
-    -moz-animation-name: sale;
-
+    -o-animation-name: sale;
+    -o-animation-iteration-count: infinite;
+    -o-animation-duration: 2s;
     animation-name: sale;
     animation-iteration-count: infinite;
     animation-duration: 2s;
@@ -118,6 +120,68 @@ div.sale-box {
     }
 } 
 
+@-ms-keyframes moveIn {
+    0% {
+        -ms-transform: scale(0.2,0.2);
+        top: 100%;
+    }
+
+    100% {
+        -ms-transform: scale(1,1);
+        top: 0%;
+    }
+
+}
+
+
+@-ms-keyframes sale {
+    0% {
+        opacity: 1;
+        top: 0%
+    }
+    70% {
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0;
+        top: 100%;
+    }
+} 
+
+@keyframes moveIn {
+    0% {
+        transform: scale(0.2,0.2);
+        top: 100%;
+    }
+
+    100% {
+        transform: scale(1,1);
+        top: 0%;
+    }
+
+}
+
+
+@keyframes sale {
+    0% {
+        opacity: 1;
+        top: 0%
+    }
+    70% {
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0;
+        top: 100%;
+    }
+}
+
 .prepare-gag {
     position: absolute;
     top: 0;
@@ -152,6 +216,7 @@ div.sale-box {
     overflow: hidden;
     -webkit-transition: max-height 0.8s;
     -moz-transition: max-height 0.8s;
+    -o-transition: max-height 0.8s;
     transition: max-height 0.8s;
 }
 
@@ -181,6 +246,10 @@ div.sale-box {
    -moz-animation-duration:2s;
    -moz-animation-iteration-count:infinite;
    -moz-animation-timing-function:linear;
+   -o-animation-name: rotate1;
+   -o-animation-duration:2s;
+   -o-animation-iteration-count:infinite;
+   -o-animation-timing-function:linear;
    animation-name: rotate1;
    animation-duration:2s;
    animation-iteration-count:infinite;
@@ -201,6 +270,7 @@ div.sale-box {
    -webkit-transform:rotate(20deg);  
    -moz-transform:rotate(20deg);  
    -ms-transform:rotate(20deg);
+   -o-transform:rotate(20deg);
    transform:rotate(20deg);
 }
 
@@ -208,6 +278,7 @@ div.sale-box {
    -webkit-transform:rotate(40deg);  
    -moz-transform:rotate(40deg);  
    -ms-transform:rotate(40deg);
+   -o-transform:rotate(40deg);
    transform:rotate(40deg);
 }
 
@@ -215,6 +286,7 @@ div.sale-box {
    -webkit-transform:rotate(60deg);  
    -moz-transform:rotate(60deg);  
    -ms-transform:rotate(60deg);
+   -o-transform:rotate(60deg);
    transform:rotate(60deg);
 }
 
@@ -222,6 +294,7 @@ div.sale-box {
    -webkit-transform:rotate(80deg);  
    -moz-transform:rotate(80deg);  
    -ms-transform:rotate(80deg);
+   -o-transform:rotate(80deg);
    transform:rotate(80deg);
 }
 
@@ -229,6 +302,7 @@ div.sale-box {
    -webkit-transform:rotate(100deg); 
    -moz-transform:rotate(100deg); 
    -ms-transform:rotate(100deg);
+   -o-transform:rotate(100deg);
    transform:rotate(100deg);
 }
 
@@ -236,6 +310,7 @@ div.sale-box {
    -webkit-transform:rotate(120deg); 
    -moz-transform:rotate(120deg); 
    -ms-transform:rotate(120deg);
+   -o-transform:rotate(120deg);
    transform:rotate(120deg);
 }
 
@@ -243,6 +318,7 @@ div.sale-box {
    -webkit-transform:rotate(140deg); 
    -moz-transform:rotate(140deg); 
    -ms-transform:rotate(140deg);
+   -o-transform:rotate(140deg);
    transform:rotate(140deg);
 }
 
@@ -250,6 +326,7 @@ div.sale-box {
    -webkit-transform:rotate(160deg); 
    -moz-transform:rotate(160deg); 
    -ms-transform:rotate(160deg);
+   -o-transform:rotate(160deg);
    transform:rotate(160deg);
 }
 
@@ -257,6 +334,7 @@ div.sale-box {
    -webkit-transform:rotate(180deg); 
    -moz-transform:rotate(180deg); 
    -ms-transform:rotate(180deg);
+   -o-transform:rotate(180deg);
    transform:rotate(180deg);
 }
 
@@ -273,6 +351,11 @@ div.sale-box {
 @-ms-keyframes rotate1 {
     from { -ms-transform: rotate(0deg); }
     to   { -ms-transform: rotate(20deg); }
+}
+
+@-o-keyframes rotate1 {
+    from { -o-transform: rotate(0deg); }
+    to   { -o-transform: rotate(20deg); }
 }
 
 @keyframes rotate1 {

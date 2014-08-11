@@ -1,4 +1,4 @@
-PRAISE TO BE GABEN
+PRAISE BE TO GABEN
 =========================
 Welcome to gabegaming.com your home for gags and gabes.
 

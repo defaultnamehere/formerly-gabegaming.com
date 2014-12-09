@@ -2,6 +2,7 @@ body {
     margin: 0;
     overflow-x: hidden;
     overflow-y: hidden;
+    height: 100%;
 }
 
 iframe {
@@ -19,13 +20,10 @@ div.gag-animation{
     left: 0px;
     z-index: 10;
     pointer-events: none;
-    -webkit-animation-duration: 10s;
-    -webkit-animation-name: moveIn;
-    -moz-animation-duration: 10s;
-    -moz-animation-name: moveIn;
-    animation-duration: 10s;
-    animation-name: moveIn;
-}
+
+    -webkit-animation: moveIn 10s;
+    animation: moveIn 10s;
+  }
 
 div.sale-box {
     position: absolute;
@@ -42,70 +40,30 @@ div.sale-box {
 
     pointer-events: none;
     color: #ffffff;
-    -webkit-animation-name: sale;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: 2s;
 
-    -moz-animation-name: sale;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-duration: 2s;
-    -moz-animation-name: sale;
+    -webkit-animation: sale infinite 2s;
+    animation: sale infinite 2s;
 
-    animation-name: sale;
-    animation-iteration-count: infinite;
-    animation-duration: 2s;
-}
+    will-change: top, opacity;
+  }
 
+/** -webkit-keyframes */
 @-webkit-keyframes moveIn {
     0% {
         -webkit-transform: scale(0.2,0.2);
         top: 100%;
     }
-
     100% {
         -webkit-transform: scale(1,1);
         top: 0%;
     }
 
 }
-
-
 @-webkit-keyframes sale {
     0% {
         opacity: 1;
-        top: 0%
-    }
-    70% {
-        opacity: 0.7;
-    }
-    80% {
-        opacity: 0.1;
-    }
-    100% {
-        opacity: 0;
-        top: 100%;
-    }
-} 
-
-@-moz-keyframes moveIn {
-    0% {
-        -moz-transform: scale(0.2,0.2);
-        top: 100%;
-    }
-
-    100% {
-        -moz-transform: scale(1,1);
         top: 0%;
     }
-
-}
-
-
-@-moz-keyframes sale {
-    0% {
-        opacity: 1;
-        top: 0%
-    }
     70% {
         opacity: 0.7;
     }
@@ -117,6 +75,34 @@ div.sale-box {
         top: 100%;
     }
 } 
+
+/** keyframes */
+@keyframes moveIn {
+    0% {
+        transform: scale(0.2,0.2);
+        top: 100%;
+    }
+    100% {
+        transform: scale(1,1);
+        top: 0%;
+    }
+}
+@keyframes sale {
+    0% {
+        opacity: 1;
+        top: 0%;
+    }
+    70% {
+        opacity: 0.7;
+    }
+    80% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0;
+        top: 100%;
+    }
+}
 
 .prepare-gag {
     position: absolute;
@@ -150,8 +136,6 @@ div.sale-box {
     width: 100%;
     max-height: 0;
     overflow: hidden;
-    -webkit-transition: max-height 0.8s;
-    -moz-transition: max-height 0.8s;
     transition: max-height 0.8s;
 }
 
@@ -173,18 +157,9 @@ div.sale-box {
    height: 910px;
    padding-top: 1090px;
    /*margin: -800px 0 0 -310px;*/
-   -webkit-animation-name: rotate1;
-   -webkit-animation-duration:2s;
-   -webkit-animation-iteration-count:infinite;
-   -webkit-animation-timing-function:linear;
-   -moz-animation-name: rotate1;
-   -moz-animation-duration:2s;
-   -moz-animation-iteration-count:infinite;
-   -moz-animation-timing-function:linear;
-   animation-name: rotate1;
-   animation-duration:2s;
-   animation-iteration-count:infinite;
-   animation-timing-function:linear;
+   -webkit-animation: rotate_sunburst 2s infinite linear;
+   animation: rotate_sunburst 2s infinite linear;
+   will-change: transform;
 }
 
 .sunburst b {
@@ -198,84 +173,47 @@ div.sale-box {
 }
 
 .sunburst b:nth-child(1) { 
-   -webkit-transform:rotate(20deg);  
-   -moz-transform:rotate(20deg);  
-   -ms-transform:rotate(20deg);
    transform:rotate(20deg);
 }
 
 .sunburst b:nth-child(2) { 
-   -webkit-transform:rotate(40deg);  
-   -moz-transform:rotate(40deg);  
-   -ms-transform:rotate(40deg);
    transform:rotate(40deg);
 }
 
 .sunburst b:nth-child(3) { 
-   -webkit-transform:rotate(60deg);  
-   -moz-transform:rotate(60deg);  
-   -ms-transform:rotate(60deg);
    transform:rotate(60deg);
 }
 
 .sunburst b:nth-child(4) { 
-   -webkit-transform:rotate(80deg);  
-   -moz-transform:rotate(80deg);  
-   -ms-transform:rotate(80deg);
    transform:rotate(80deg);
 }
 
 .sunburst b:nth-child(5) { 
-   -webkit-transform:rotate(100deg); 
-   -moz-transform:rotate(100deg); 
-   -ms-transform:rotate(100deg);
    transform:rotate(100deg);
 }
 
 .sunburst b:nth-child(6) {    
-   -webkit-transform:rotate(120deg); 
-   -moz-transform:rotate(120deg); 
-   -ms-transform:rotate(120deg);
    transform:rotate(120deg);
 }
 
 .sunburst b:nth-child(7) { 
-   -webkit-transform:rotate(140deg); 
-   -moz-transform:rotate(140deg); 
-   -ms-transform:rotate(140deg);
    transform:rotate(140deg);
 }
 
 .sunburst b:nth-child(8) { 
-   -webkit-transform:rotate(160deg); 
-   -moz-transform:rotate(160deg); 
-   -ms-transform:rotate(160deg);
    transform:rotate(160deg);
 }
 
 .sunburst b:nth-child(9) { 
-   -webkit-transform:rotate(180deg); 
-   -moz-transform:rotate(180deg); 
-   -ms-transform:rotate(180deg);
    transform:rotate(180deg);
 }
 
-@-webkit-keyframes rotate1 {
+@-webkit-keyframes rotate_sunburst {
     from { -webkit-transform: rotate(0deg); }
     to   { -webkit-transform: rotate(20deg); }
 }
 
-@-moz-keyframes rotate1 {
-    from { -moz-transform: rotate(0deg); }
-    to   { -moz-transform: rotate(20deg); }
-}
-
-@-ms-keyframes rotate1 {
-    from { -ms-transform: rotate(0deg); }
-    to   { -ms-transform: rotate(20deg); }
-}
-
-@keyframes rotate1 {
+@keyframes rotate_sunburst {
     from { transform: rotate(0deg); }
     to   { transform: rotate(20deg); }
 }

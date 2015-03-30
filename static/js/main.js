@@ -12,6 +12,7 @@ $(function() {
 
     // The carefully, lovingly determined percentages which his holiness removes from the prices of his products.
     var BEST_SCORES = [136, 161, 178, 116, 128, 186, 134, 103, 116, 216]
+    var TEAMS = ["#FF0000", "#0000FF"]
 
     // lolsorandom
     var randomChoice = function(list) {
@@ -39,12 +40,14 @@ $(function() {
             var maxSales = (pageWidth/70)*5
             var xPos = getRandomInt(0, pageWidth);
             var gameScore = randomChoice(BEST_SCORES);
+            var teamColor = randomChoice(TEAMS);
             // Just copy the hidden box we had at page load time to make a new box.
             var newSale = $saleBox.clone().show();
 
             newSale.text(gameScore); // >js >strings
 
             newSale.css("left", xPos);
+            newSale.css("background-color", teamColor);
             $('body').append(newSale);
 
             //Only have maxSales sale boxes onscreen at once.

@@ -3,16 +3,12 @@
 
 $(function() {
 
-    // We poll these variables while the wallet is being prepared
     var gabeReady = false;
-    // also only care about the first time we load the steam iframe, or else we keep adding sales
-    // every time we navigate to a new steam link.
     var iframeReady = false;
     var audioReady = false;
 
-    // The carefully, lovingly determined percentages which his holiness removes from the prices of his products.
-    var BEST_SCORES = [136, 161, 178, 116, 128, 186, 134, 103, 116, 216]
-    var TEAMS = ["#FF0000", "#0000FF"]
+    var BEST_SCORES = [136, 161, 178, 116, 128, 186, 134, 103, 116, 216, 167]
+    var TEAMS = ["#f00", "#00f"]
 
     // lolsorandom
     var randomChoice = function(list) {
@@ -26,22 +22,16 @@ $(function() {
     var startRain = function () {
         console.log("ARE YOU READY FOR A MIRACLE?");
 
-        // When the image of his holiness loads, show it and animate it.
         var $saleBox = $('.sale-box');
-        // How long in ms to wait until adding another sale box.
         var interval = 200;
         var numSales = 0;
 
-        // Adds a sale box at a random x position.
         var addSale = function() {
-            // Get the width every time we add a sale to account for dynamic widths.
-            // Thanks ocbaker on github for finding this bug.
             var pageWidth = $('body').width();
             var maxSales = (pageWidth/70)*5
             var xPos = getRandomInt(0, pageWidth);
             var gameScore = randomChoice(BEST_SCORES);
             var teamColor = randomChoice(TEAMS);
-            // Just copy the hidden box we had at page load time to make a new box.
             var newSale = $saleBox.clone().show();
 
             newSale.text(gameScore); // >js >strings
@@ -50,16 +40,13 @@ $(function() {
             newSale.css("background-color", teamColor);
             $('body').append(newSale);
 
-            //Only have maxSales sale boxes onscreen at once.
             if (numSales < maxSales) {
-                // Add a new sale box later.
                 window.setTimeout(addSale, interval);
                 numSales++;
             }
 
         };
 
-        // Set an interval to decrease the interval #inception
         window.setInterval(function() {
             interval = Math.max(10, interval - 10);
         }, 500);
@@ -98,7 +85,6 @@ $(function() {
     });
 
     $gabe = $('div.gag > img');
-    //Even if we loaded from cache, praise be. Nothing can cache his holiness forever.
     if ($gabe[0].complete) {
         gabeReady = true;
     }

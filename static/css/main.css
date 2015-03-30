@@ -41,8 +41,8 @@ div.sale-box {
     pointer-events: none;
     color: #ffffff;
 
-    -webkit-animation: sale infinite 2s;
-    animation: sale infinite 2s;
+    -webkit-animation: sale infinite 3.2s;
+    animation: sale infinite 3.2s;
 
     will-change: top, opacity;
   }

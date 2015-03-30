@@ -11,7 +11,7 @@ $(function() {
     var audioReady = false;
 
     // The carefully, lovingly determined percentages which his holiness removes from the prices of his products.
-    var STEAM_SALES = [10, 25, 33, 50, 66, 75, 80, 90]
+    var BEST_SCORES = [136, 161, 178, 116, 128, 186, 134, 103, 116, 216]
 
     // lolsorandom
     var randomChoice = function(list) {
@@ -38,11 +38,11 @@ $(function() {
             var pageWidth = $('body').width();
             var maxSales = (pageWidth/70)*5
             var xPos = getRandomInt(0, pageWidth);
-            var percentOff = randomChoice(STEAM_SALES);
+            var gameScore = randomChoice(BEST_SCORES);
             // Just copy the hidden box we had at page load time to make a new box.
             var newSale = $saleBox.clone().show();
 
-            newSale.text("-" + percentOff + "%"); // >js >strings
+            newSale.text(gameScore); // >js >strings
 
             newSale.css("left", xPos);
             $('body').append(newSale);

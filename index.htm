@@ -1,34 +1,61 @@
 <html>
     <head>
-        <title>Welcome to gabegaming.com your home for gags and gabes</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-        </script>
-        <script src="static/js/main.js">
-        </script>
-        <link rel="stylesheet" href="static/css/main.css"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+        <title>PRAISE BE TO DEAN</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="static/js/main.js"></script>
+        <link rel="stylesheet" href="static/css/main.css" />
+        <link rel="stylesheet" href="static/css/leaguegothic.css" />
+        <link rel="stylesheet" href="static/css/social.css" />
     </head>
 
     <body>
 
-        <audio autoplay loop>
-            <source src="static/gaben.ogg" />
-            <source src="static/gaben.mp3" />
-        </audio>
+    <div class="prepare-gag">
+        <h1>PLEASE PREPARE YOUR ROBOT<br/>
+        <div class="prepare-loader">
+            <img src="/static/img/walletisready.jpg" />
+        </div></h1>
+    </div>
 
+    <div class="social-header">
+        <div class="social-bar pull-right">
+            <a href="https://github.com/phantamanta44/effaresee" target="_blank"><div class="icon icon-gh"><i class="fa fa-github"></i></div></a>
+        </div>
+    </div>
+
+    <audio>
+        <source src="static/miracle.ogg" />
+        <source src="static/miracle.mp3" />
     </audio>
-    <div class="gag">
+
+    <div class="gag" style="display: none;">
         <img src="static/img/gabe.png"/>
+            <div class="sunburst" style="display: none;">
+                <div class="outer">
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+                <b></b>
+                </div>
+            </div>
     </div>
 
     <div>
-        <iframe class="steam" name="steam" src="http://store.steampowered.com">
+        <iframe class="steam" name="steam" src="http://www.thebluealliance.com/">
         </iframe>
     </div>
 
-    <div class="sale-box animated sale" style="display:none;">
-        -50%
+    <div class="sale-box" style="display:none;">
+        167
+    </div>
+    <div id="boxes">
     </div>
 
-
-</body>
+    </body>
 </html>

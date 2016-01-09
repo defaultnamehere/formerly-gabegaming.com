@@ -39,7 +39,7 @@ div.sale-box {
     background-color: #4c6b22 !important;
 
     pointer-events: none;
-    color: #ffffff;
+    color: #a4d009;
 
     -webkit-animation: sale infinite 2s;
     animation: sale infinite 2s;
@@ -74,7 +74,7 @@ div.sale-box {
         opacity: 0;
         top: 100%;
     }
-} 
+}
 
 /** keyframes */
 @keyframes moveIn {
@@ -172,39 +172,39 @@ div.sale-box {
    border-style: solid;
 }
 
-.sunburst b:nth-child(1) { 
+.sunburst b:nth-child(1) {
    transform:rotate(20deg);
 }
 
-.sunburst b:nth-child(2) { 
+.sunburst b:nth-child(2) {
    transform:rotate(40deg);
 }
 
-.sunburst b:nth-child(3) { 
+.sunburst b:nth-child(3) {
    transform:rotate(60deg);
 }
 
-.sunburst b:nth-child(4) { 
+.sunburst b:nth-child(4) {
    transform:rotate(80deg);
 }
 
-.sunburst b:nth-child(5) { 
+.sunburst b:nth-child(5) {
    transform:rotate(100deg);
 }
 
-.sunburst b:nth-child(6) {    
+.sunburst b:nth-child(6) {
    transform:rotate(120deg);
 }
 
-.sunburst b:nth-child(7) { 
+.sunburst b:nth-child(7) {
    transform:rotate(140deg);
 }
 
-.sunburst b:nth-child(8) { 
+.sunburst b:nth-child(8) {
    transform:rotate(160deg);
 }
 
-.sunburst b:nth-child(9) { 
+.sunburst b:nth-child(9) {
    transform:rotate(180deg);
 }
 

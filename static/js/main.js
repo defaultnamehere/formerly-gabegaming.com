@@ -37,14 +37,15 @@ $(function() {
             // Thanks ocbaker on github for finding this bug.
             var pageWidth = $('body').width();
             var maxSales = (pageWidth/70)*5
-            var xPos = getRandomInt(0, pageWidth);
+            var xPos = getRandomInt(0, 100);
             var percentOff = randomChoice(STEAM_SALES);
             // Just copy the hidden box we had at page load time to make a new box.
             var newSale = $saleBox.clone().show();
 
             newSale.text("-" + percentOff + "%"); // >js >strings
-
-            newSale.css("left", xPos);
+			
+            newSale.css("left", xPos + "%");
+			
             $('body').append(newSale);
 
             //Only have maxSales sale boxes onscreen at once.
@@ -125,6 +126,3 @@ $(function() {
 
     prepareWallet();
 });
-
-
-

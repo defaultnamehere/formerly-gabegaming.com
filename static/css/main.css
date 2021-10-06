@@ -5,13 +5,18 @@ body {
     height: 100%;
 }
 
-iframe {
+.steam {
     position: absolute;
     border:0;
     top: 0px;
     left: 0px;
     height: 100%;
     width: 100%;
+    background: url("../img/steampowered.png") #333 top center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 div.gag-animation{
@@ -74,7 +79,7 @@ div.sale-box {
         opacity: 0;
         top: 100%;
     }
-} 
+}
 
 /** keyframes */
 @keyframes moveIn {
@@ -112,7 +117,7 @@ div.sale-box {
     width: 100%;
     height: 100%;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #222;
     display: table;
 }
 
